@@ -18,7 +18,6 @@ def csv_write(i, file_list):
         {'select': select,'Lst1':1}),
     objDF.to_csv(file_name)
 
-
 def html_parser(i, url):
     item_list = []
     global li
@@ -50,7 +49,6 @@ def main():
     for inex1, item1 in enumerate(cat_01_list):
         cat_1 = item1.find('a').text
         cat_1_url = item1.find('a')['href']
-
 
         cat_2_list = html_parser(3, cat_1_url)
         #for Loop
@@ -88,14 +86,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-"""
-    else:
-        list_1 = _page_soup.find('ul', attrs={'class': 'list column first'}).findAll('li')
-        list_2 = _page_soup.find('ul', attrs={'class': 'list top-level-subgenres'}).findAll('li')
-        item_list = list_1 - list_2
-
-    return item_list
-
-"""
